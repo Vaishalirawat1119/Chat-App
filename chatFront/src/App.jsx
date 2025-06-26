@@ -1,9 +1,15 @@
 import { useState } from 'react'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Home from './components/Home'
 
 function App() {
 
   return (
-    <div className='text-3xl text-red-500'>Hello</div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
