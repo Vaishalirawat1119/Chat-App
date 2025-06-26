@@ -1,6 +1,10 @@
 import React from 'react'
+import Register from '../components/Register'
+import { useState } from 'react'
+import Model from '../components/Model'
 
 const Home = () => {
+  const [isModelOpen, setIsModelOpen] = useState(false)
   return (
     <div className='flex items-center justify-center h-screen bg-grey-100'>
         <div 
@@ -11,11 +15,14 @@ const Home = () => {
                 <h2 className='text-3xl bg-white py-1 font-bold text-grey-700 rounded-2xl'>
                   Welcome
                 </h2>
-                <button className='p-3 hover:bg-black bg-opacity-50 bg-black rounded-2xl mt-3  text-white text-2xl font-bold'>
+                <button className='p-3 hover:bg-black bg-opacity-50 bg-black rounded-2xl mt-3  text-white text-2xl font-bold' onClick={() => setIsModelOpen(true)}>
                   Login / Register
                 </button>
             </div>
         </div>
+        <Model isModelOpen={isModelOpen} setIsModelOpen={setIsModelOpen}>
+          <Register />
+        </Model>
     </div>
   )
 }
