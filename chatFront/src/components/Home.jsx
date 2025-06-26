@@ -8,8 +8,12 @@ const Home = () => {
             style={{backgroundImage: "url('/home-bg.jpg')"}}
         >
             <div className='text-center'>
-                <h2 className='text-3xl bg-white py-1 font-bold text-grey-700 rounded-2xl'>Welcome</h2>
-                <button className='p-3 hover:bg-black bg-opacity-50 bg-black rounded-2xl mt-3  text-white text-2xl font-bold'>Login / Register</button>
+                <h2 className='text-3xl bg-white py-1 font-bold text-grey-700 rounded-2xl'>
+                  Welcome
+                </h2>
+                <button className='p-3 hover:bg-black bg-opacity-50 bg-black rounded-2xl mt-3  text-white text-2xl font-bold'>
+                  Login / Register
+                </button>
             </div>
         </div>
     </div>
