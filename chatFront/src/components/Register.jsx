@@ -13,22 +13,22 @@ const Register = ({openLogin}) => {
   return (
    <div>
       <h2 className='text-2xl font-bold mb-2'>Sign Up</h2>
-      <form onClick={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <div className='mb-4'>
-          <label className='block text-grey-700 '>Name:</label>
-          <input type="text" className='px-3 py-2 border w-full' onChange={(e) => setUsername(e.target.value)} placeholder='Enter Name'/>
+          <label className='block text-gray-700 '>Name:</label>
+          <input type="text" className='px-3 py-2 border w-full' onChange={(e) => setName(e.target.value)} placeholder='Enter Name'/>
         </div>
         <div className='mb-4'>
-          <label className='block text-grey-700'>Email:</label>
-          <input type="email" className='w-full px-3 py-2 border' onChange={(e) => setPassword(e.target.value)} placeholder='Enter Email'/>
+          <label className='block text-gray-700'>Email:</label>
+          <input type="email" className='w-full px-3 py-2 border' onChange={(e) => setEmail(e.target.value)} placeholder='Enter Email'/>
         </div>
         <div className='mb-4'>
-          <label className='block text-grey-700'>Upload Image</label>
+          <label className='block text-gray-700'>Upload Image</label>
           <input 
-            type="file" 
+            type='file' 
+            accept="image/*"
             onChange={(e) => setFile(e.target.files[0])}
-            className='border p-2 block w-full 
-                      text-sm text-grey-500 
+            className='border p-2 block w-full text-sm text-gray-500 
                       file:mr-4 file:py-2 file:px-4
                       file:rounded-full file:border-0 file:text-sm 
                       file:font-semibold file:bg-blue-500 
@@ -40,7 +40,7 @@ const Register = ({openLogin}) => {
         </div>
       </form>
       <div className='text-center'>
-        <span className='text-grey-700'>Already Have an Account?</span>
+        <span className='text-gray-700'>Already Have an Account?</span>
         <button className='text-blue-600' onClick={openLogin}>Login</button>
       </div>
     </div> 
