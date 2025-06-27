@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Login = () => {
+const Login = ({openSignUp}) => {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -34,7 +34,7 @@ const Login = () => {
       </form>
       <div className='text-center'>
         <span className='text-grey-700'>Don't Have an Account?</span>
-        <button className='text-red-800'>Sign Up</button>
+        <button className='text-red-800' onClick={openSignUp}>Sign Up</button>
       </div>
     </div>
   )
