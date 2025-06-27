@@ -1,10 +1,12 @@
 import React from 'react'
 import Register from '../components/Register'
+import Login from '../components/Login'
 import { useState } from 'react'
 import Model from '../components/Model'
 
 const Home = () => {
   const [isModelOpen, setIsModelOpen] = useState(false)
+  const [isLogin, setIsLogin] = useState(true);
   return (
     <div className='flex items-center justify-center h-screen bg-grey-100'>
         <div 
@@ -21,7 +23,7 @@ const Home = () => {
             </div>
         </div>
         <Model isModelOpen={isModelOpen} setIsModelOpen={setIsModelOpen}>
-          <Register />
+          {isLogin ? <Login /> : <Register />}
         </Model>
     </div>
   )
