@@ -26,15 +26,15 @@ const Login = ({openSignUp}) => {
             <input type="checkbox" className='form-checkbox'/>
             <span className='ml-2 text-grey-700'>Remember Me</span>
           </label>
-          <a href="#" className='text-red-800'>Forgot Password?</a>
+          <a href="#" className='text-blue-600'>Forgot Password?</a>
         </div>
         <div className='mb-4'>
-          <button type='submit' className='w-full bg-red-600 text-white py-2'>Login</button>
+          <button type='submit' className='w-full bg-blue-600 text-white py-2'>Login</button>
         </div>
       </form>
       <div className='text-center'>
         <span className='text-grey-700'>Don't Have an Account?</span>
-        <button className='text-red-800' onClick={openSignUp}>Sign Up</button>
+        <button className='text-blue-600' onClick={openSignUp}>Sign Up</button>
       </div>
     </div>
   )
