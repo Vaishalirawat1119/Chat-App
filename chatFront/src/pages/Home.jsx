@@ -34,7 +34,7 @@ const Home = () => {
             </div>
         </div>
         <Model isModelOpen={isModelOpen} setIsModelOpen={setIsModelOpen}>
-          {isLogin ? <Login openSignUp={openSignUp} /> : <Register />}
+          {isLogin ? <Login openSignUp={openSignUp} /> : <Register openLogin={openLogin} />}
         </Model>
     </div>
   )
