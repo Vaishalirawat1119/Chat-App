@@ -10,7 +10,7 @@ const Register = ({openLogin}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:2000/chat/user/register', {name, email, password})
+    axios.post('http://localhost:2000/chat/user/register', {name, email, password}) 
   }
 
   return (
