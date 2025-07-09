@@ -4,16 +4,19 @@ import Connect from './db/connection.js'
 import dotenv from 'dotenv'
 import AuthRouter from './routes/auth.js'
 
-dotenv.config(); // Load environment variables from .env file
+dotenv.config();
 
 const app = express()
 
 app.use(cors())
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
-app.use('/chat/user', AuthRouter) // Register route
+app.use('/chat/user', AuthRouter)
+
+app.use('/public', express.static('public'))
 
 app.listen(process.env.PORT, () => {
     Connect()
-    console.log("server is running on port 2000....");  
+    console.log(`Server is running on port ${process.env.PORT}....`);  
 })

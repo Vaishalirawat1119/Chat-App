@@ -3,14 +3,29 @@ import axios from 'axios'
 
 const Register = ({openLogin}) => {
 
-  const [name, setName] = useState('');
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [file, setFile] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios.post('http://localhost:2000/chat/user/register', {name, email, password}) 
+    const formData = new FormData()
+    formData.append('username', username)
+    formData.append('email', email)
+    formData.append('password', password)
+    formData.append('image', file)
+    try{
+      const response = await axios.post('http://localhost:2000/chat/user/register', formData)
+      console.log(response);
+
+      if(response.data.msg === "success"){
+      openLogin()
+      }
+
+    } catch(err){
+      console.log(err);
+    }
   }
 
   return (
@@ -19,7 +34,7 @@ const Register = ({openLogin}) => {
       <form onSubmit={handleSubmit}>
         <div className='mb-4'>
           <label className='block text-gray-700 '>Name:</label>
-          <input type="text" className='px-3 py-2 border w-full' onChange={(e) => setName(e.target.value)} placeholder='Enter Name'/>
+          <input type="text" className='px-3 py-2 border w-full' onChange={(e) => setUsername(e.target.value)} placeholder='Enter Name'/>
         </div>
         <div className='mb-4'>
           <label className='block text-gray-700'>Email:</label>
